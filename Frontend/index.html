@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Salon & Spa - Luxury Grooming & Styling Sanctuary</title>
+    <meta name="description" content="Book appointments for haircuts, spa treatments, massage, facials, and beauty therapies at Luxe Salon & Spa. Expert stylists, premium therapies.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="home-page">
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">✦ Luxe <span>Salon & Spa</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <!-- Dynamically populated by script.js -->
+            </ul>
+            <div class="nav-actions" id="nav-actions">
+                <!-- Dynamically populated by script.js -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero" id="hero-banner">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-tagline">Welcome to Sanctuary</p>
+                <h1 class="hero-title">Elevate Your Look, <span>Revitalize Your Soul</span></h1>
+                <p class="hero-desc">Indulge in premium hair styling, body healing massages, organic facials, and pedicure therapies delivered by our master practitioners.</p>
+                <div class="hero-btns">
+                    <a href="booking.html" class="btn btn-primary" id="hero-book-btn">Book Appointment</a>
+                    <a href="services.html" class="btn btn-secondary">Explore Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services Section -->
+    <section class="section" id="featured-services-section">
+        <div class="container">
+            <h2 class="section-title">Our Featured Services</h2>
+            <p class="section-subtitle">Exquisite treatments designed to give you the ultimate pampering and styling experience.</p>
+            
+            <div class="services-grid" id="featured-services-container">
+                <!-- Fallback Loading Content -->
+                <div style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">
+                    Loading premium services...
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="services.html" class="btn btn-secondary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Stylists Section -->
+    <section class="section" style="background-color: rgba(255,255,255,0.01); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);" id="popular-stylists-section">
+        <div class="container">
+            <h2 class="section-title">Our Popular Stylists</h2>
+            <p class="section-subtitle">Meet our award-winning grooming experts and spa therapists dedicated to your care.</p>
+            
+            <div class="stylist-grid" id="popular-stylists-container">
+                <!-- Fallback Loading Content -->
+                <div style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">
+                    Loading styling specialists...
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="stylists.html" class="btn btn-secondary">View Stylist Availability</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section (Bonus) -->
+    <section class="section" id="reviews-section">
+        <div class="container">
+            <h2 class="section-title">Customer Experiences</h2>
+            <p class="section-subtitle">What our esteemed customers say about our wellness and grooming treatments.</p>
+            
+            <div class="services-grid">
+                <div class="stylist-card" style="padding: 40px 30px; text-align: left;">
+                    <div style="color: var(--accent); margin-bottom: 16px; font-size: 1.25rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="font-style: italic; color: var(--text-muted); margin-bottom: 20px;">"The Swedish Massage at Luxe is heavenly! Rohan Verma is an expert therapist who completely removed my shoulder stiffness. Highly recommended!"</p>
+                    <h4 style="font-size: 1.1rem; color: var(--text-main);">Amit Malhotra</h4>
+                    <span style="font-size: 0.8rem; color: var(--primary);">Verified Client</span>
+                </div>
+                
+                <div class="stylist-card" style="padding: 40px 30px; text-align: left;">
+                    <div style="color: var(--accent); margin-bottom: 16px; font-size: 1.25rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="font-style: italic; color: var(--text-muted); margin-bottom: 20px;">"Priya Sharma gave me a fantastic haircut and deep hair spa treatment. She understands what style suits your face structure. Will definitely visit again!"</p>
+                    <h4 style="font-size: 1.1rem; color: var(--text-main);">Neha Sen</h4>
+                    <span style="font-size: 0.8rem; color: var(--primary);">Verified Client</span>
+                </div>
+
+                <div class="stylist-card" style="padding: 40px 30px; text-align: left;">
+                    <div style="color: var(--accent); margin-bottom: 16px; font-size: 1.25rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="font-style: italic; color: var(--text-muted); margin-bottom: 20px;">"The booking and payment flows are seamless. I scheduled my session online, scanned the UPI code, and got instant confirmation. Excellent digital experience."</p>
+                    <h4 style="font-size: 1.1rem; color: var(--text-main);">Rahul Sharma</h4>
+                    <span style="font-size: 0.8rem; color: var(--primary);">Verified Client</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 16px;">✦ Luxe <span>Salon & Spa</span></a>
+                    <p>Experience the ultimate luxury grooming and healing sanctuary designed for you.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Hair Spa</a></li>
+                        <li><a href="services.html">Massages</a></li>
+                        <li><a href="services.html">Facials</a></li>
+                        <li><a href="services.html">Pedicures</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Timings</h4>
+                    <p>Monday - Sunday<br>09:00 AM - 08:00 PM</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>📞 +91 99887 76655<br>✉️ contact@luxesalon.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Salon & Spa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

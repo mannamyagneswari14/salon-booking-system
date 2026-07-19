@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon & Spa Services - Luxe Salon & Spa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="services-page">
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">✦ Luxe <span>Salon & Spa</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links"></ul>
+            <div class="nav-actions" id="nav-actions"></div>
+        </div>
+    </nav>
+
+    <!-- Services Header / Search & Filter Section -->
+    <section class="section" style="padding-bottom: 20px;">
+        <div class="container">
+            <h1 class="section-title">Our Services</h1>
+            <p class="section-subtitle">Browse through our premium treatments. Search or filter by categories to find your perfect session.</p>
+            
+            <!-- Search & Filters (Bonus Feature) -->
+            <div class="search-filter-bar">
+                <div class="search-input-group">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="service-search" placeholder="Search hair cut, facial, spa massage..." aria-label="Search Services">
+                </div>
+                
+                <div class="filter-categories" id="filter-categories-container">
+                    <button class="filter-tab active" data-category="All">All</button>
+                    <button class="filter-tab" data-category="Hair Cut">Hair Cut</button>
+                    <button class="filter-tab" data-category="Hair Styling">Styling</button>
+                    <button class="filter-tab" data-category="Spa">Spa</button>
+                    <button class="filter-tab" data-category="Facial">Facial</button>
+                    <button class="filter-tab" data-category="Massage">Massage</button>
+                    <button class="filter-tab" data-category="Pedicure">Pedicure</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Cards List Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="services-grid" id="services-list-container">
+                <!-- Dynamically loaded by script.js -->
+                <div style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">
+                    Loading our premium treatments...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Salon & Spa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

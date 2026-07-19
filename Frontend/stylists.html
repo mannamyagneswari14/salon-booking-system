@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grooming Stylists & Spa Therapists - Luxe Salon & Spa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="stylists-page">
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">✦ Luxe <span>Salon & Spa</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links"></ul>
+            <div class="nav-actions" id="nav-actions"></div>
+        </div>
+    </nav>
+
+    <!-- Stylist Title Section -->
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title">Our Master Stylists</h1>
+            <p class="section-subtitle">Choose from our group of licensed grooming professionals and therapeutic wellness practitioners.</p>
+            
+            <div style="display:flex; justify-content:center; gap:24px; margin-bottom:40px; flex-wrap:wrap;">
+                <div style="display:flex; align-items:center; gap:8px; font-size:0.9rem;">
+                    <span style="width:12px; height:12px; border-radius:50%; background-color:var(--success);"></span>
+                    <span>Available Today</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; font-size:0.9rem;">
+                    <span style="width:12px; height:12px; border-radius:50%; background-color:var(--warning);"></span>
+                    <span>Fully Booked / Busy</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; font-size:0.9rem;">
+                    <span style="width:12px; height:12px; border-radius:50%; background-color:var(--danger);"></span>
+                    <span>On Leave</span>
+                </div>
+            </div>
+
+            <div class="stylist-grid" id="stylists-list-container">
+                <!-- Dynamically loaded by script.js -->
+                <div style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">
+                    Loading our styling team...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Salon & Spa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

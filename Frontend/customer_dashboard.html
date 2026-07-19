@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - Luxe Salon & Spa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="customer-dashboard-page">
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">✦ Luxe <span>Salon & Spa</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links"></ul>
+            <div class="nav-actions" id="nav-actions"></div>
+        </div>
+    </nav>
+
+    <!-- Welcome Section & Stats -->
+    <section class="section" style="padding-bottom: 20px;">
+        <div class="container">
+            <div class="dashboard-header">
+                <div class="user-welcome">
+                    <h2>Hello, <span id="dashboard-user-name">Guest</span>!</h2>
+                    <p>Welcome to your personal dashboard. Track your bookings and treatment invoices.</p>
+                </div>
+                <div>
+                    <a href="booking.html" class="btn btn-primary">Book New Session</a>
+                </div>
+            </div>
+
+            <!-- Countdown Reminder Box (Bonus Feature) -->
+            <div class="booking-panel" id="next-appt-reminder" style="display: none; background-color: rgba(139, 92, 246, 0.03); border-color: var(--border-color-glow); margin-bottom: 40px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                    <div>
+                        <span class="countdown-badge">⏳ Next Session Reminder</span>
+                        <h3 style="font-size: 1.5rem; margin-top: 10px;" id="reminder-service-name">Service</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">with <strong id="reminder-stylist">Stylist</strong> at <span id="reminder-time">00:00</span></p>
+                    </div>
+                    <div style="text-align: right;">
+                        <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: block;">Starts in</span>
+                        <span style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--accent);" id="countdown-timer">00h : 00m : 00s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content Sections -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container" style="display: grid; grid-template-columns: 2fr 1.2fr; gap: 40px; align-items: start;">
+            
+            <!-- Left: Upcoming Appointments & History -->
+            <div style="display: flex; flex-direction: column; gap: 40px;">
+                <!-- Upcoming appointments -->
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Upcoming Appointments</h3>
+                    <div style="display: flex; flex-direction: column; gap: 20px;" id="upcoming-appointments-list">
+                        <!-- Loaded dynamically -->
+                        <div style="text-align: center; color: var(--text-muted);">Loading upcoming appointments...</div>
+                    </div>
+                </div>
+
+                <!-- History -->
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Treatment History</h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px;" id="completed-services-list">
+                        <!-- Loaded dynamically -->
+                        <div style="text-align: center; color: var(--text-muted);">Loading historical records...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Payment Logs -->
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Payment History</h3>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Ref</th>
+                                <th>Appt</th>
+                                <th>Paid</th>
+                                <th>Method</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="payment-history-body">
+                            <!-- Loaded dynamically -->
+                            <tr>
+                                <td colspan="5" style="text-align: center; color: var(--text-muted);">Loading payments...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Salon & Spa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

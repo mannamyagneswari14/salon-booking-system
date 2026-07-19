@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login - Luxe Salon & Spa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="login-page">
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">✦ Luxe <span>Salon & Spa</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links"></ul>
+            <div class="nav-actions" id="nav-actions"></div>
+        </div>
+    </nav>
+
+    <!-- Login Form Section -->
+    <section class="section">
+        <div class="container">
+            <div class="form-container">
+                <h1 class="form-title">Welcome Back</h1>
+                <p class="form-subtitle">Login to book your grooming and spa therapies</p>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label class="form-label" for="login-email">Email Address</label>
+                        <input type="email" id="login-email" class="form-control" placeholder="name@domain.com" required autocomplete="username">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="login-password">Password</label>
+                        <div class="pwd-wrapper">
+                            <input type="password" id="login-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+                            <button class="pwd-toggle" type="button" aria-label="Toggle Password Visibility">👁️</button>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="btn-login-submit">Login</button>
+                </form>
+                
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="register.html">Sign Up Now</a></p>
+                    <p style="margin-top: 12px; font-size: 0.8rem; color: var(--text-muted);">
+                        Demo Accounts:<br>
+                        Admin: <strong>admin@salonspa.com</strong> / <strong>admin123</strong><br>
+                        Customer: <strong>rahul@gmail.com</strong> / <strong>rahul123</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top:none; padding-top:0;">
+                <p>&copy; 2026 Luxe Salon & Spa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

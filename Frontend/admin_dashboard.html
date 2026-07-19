@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Administration Console - Luxe Salon & Spa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="admin-dashboard-page">
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">✦ Luxe <span>Administration</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links"></ul>
+            <div class="nav-actions" id="nav-actions"></div>
+        </div>
+    </nav>
+
+    <!-- Admin Console Section -->
+    <section class="section">
+        <div class="container">
+            <div class="admin-layout">
+                <!-- Sidebar -->
+                <aside class="admin-sidebar">
+                    <button class="admin-tab active" data-section="overview">📊 Overview</button>
+                    <button class="admin-tab" data-section="customers">👤 Customers</button>
+                    <button class="admin-tab" data-section="services">💅 Services</button>
+                    <button class="admin-tab" data-section="stylists">💇 Stylists</button>
+                    <button class="admin-tab" data-section="appointments">📅 Appointments</button>
+                    <button class="admin-tab" data-section="payments">💳 Payments</button>
+                </aside>
+
+                <!-- Main Content Sections -->
+                <main class="admin-main">
+                    
+                    <!-- 1. OVERVIEW SECTION -->
+                    <div class="admin-content-section active" id="admin-sec-overview">
+                        <h2 style="font-size:1.8rem; margin-bottom:24px;">Executive Dashboard</h2>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-label">Total Earnings</span>
+                                <span class="stat-value" id="stat-total-income">₹0</span>
+                                <span class="stat-desc">Cumulative Paid Transactions</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">Total Bookings</span>
+                                <span class="stat-value" id="stat-total-bookings">0</span>
+                                <span class="stat-desc">Total Scheduled Sessions</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">Registered Customers</span>
+                                <span class="stat-value" id="stat-total-customers">0</span>
+                                <span class="stat-desc">Total Active Customer Accounts</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">Active Stylists</span>
+                                <span class="stat-value" id="stat-active-stylists">0</span>
+                                <span class="stat-desc">Stylists Available Today</span>
+                            </div>
+                        </div>
+
+                        <div class="booking-panel" style="margin-top:40px;">
+                            <h3 style="margin-bottom:16px;">Quick Actions Panel</h3>
+                            <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                                <button class="btn btn-primary btn-sm" onclick="openAddCustomerModal()">+ Add Customer</button>
+                                <button class="btn btn-primary btn-sm" onclick="openAddServiceModal()">+ Add Service</button>
+                                <button class="btn btn-primary btn-sm" onclick="openAddStylistModal()">+ Add Stylist</button>
+                                <button class="btn btn-primary btn-sm" onclick="openAddAppointmentModal()">+ Add Appointment</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. CUSTOMERS SECTION -->
+                    <div class="admin-content-section" id="admin-sec-customers">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+                            <h2 style="font-size:1.8rem;">Manage Customers</h2>
+                            <button class="btn btn-accent btn-sm" onclick="openAddCustomerModal()">+ Add Customer</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Full Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Gender</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-customers-body">
+                                    <!-- Populated by script.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 3. SERVICES SECTION -->
+                    <div class="admin-content-section" id="admin-sec-services">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+                            <h2 style="font-size:1.8rem;">Manage Salon Services</h2>
+                            <button class="btn btn-accent btn-sm" onclick="openAddServiceModal()">+ Add Service</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Service Name</th>
+                                        <th>Category</th>
+                                        <th>Duration</th>
+                                        <th>Price</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-services-body">
+                                    <!-- Populated by script.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 4. STYLISTS SECTION -->
+                    <div class="admin-content-section" id="admin-sec-stylists">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+                            <h2 style="font-size:1.8rem;">Manage Stylists & Staff</h2>
+                            <button class="btn btn-accent btn-sm" onclick="openAddStylistModal()">+ Add Stylist</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Stylist Name</th>
+                                        <th>Specialization</th>
+                                        <th>Experience</th>
+                                        <th>Availability</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-stylists-body">
+                                    <!-- Populated by script.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 5. APPOINTMENTS SECTION -->
+                    <div class="admin-content-section" id="admin-sec-appointments">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+                            <h2 style="font-size:1.8rem;">Manage Appointments</h2>
+                            <button class="btn btn-accent btn-sm" onclick="openAddAppointmentModal()">+ Add Appointment</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ref ID</th>
+                                        <th>Customer</th>
+                                        <th>Service</th>
+                                        <th>Stylist</th>
+                                        <th>Date & Time</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-appointments-body">
+                                    <!-- Populated by script.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 6. PAYMENTS SECTION -->
+                    <div class="admin-content-section" id="admin-sec-payments">
+                        <h2 style="font-size:1.8rem; margin-bottom:24px;">Payment Transactions Log</h2>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Transaction ID</th>
+                                        <th>Customer</th>
+                                        <th>Appointment ID</th>
+                                        <th>Amount</th>
+                                        <th>Method</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-payments-body">
+                                    <!-- Populated by script.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </section>
+
+    /* ==================================================
+       CRUD FORM DIALOG OVERLAYS (MODALS)
+       ================================================== */
+
+    <!-- A. Customer Modal -->
+    <div class="modal-overlay" id="modal-customer">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title" id="cust-modal-title">Add Customer</h3>
+                <button class="modal-close" onclick="closeModal('modal-customer')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="cust-form-id">
+                <div class="form-group">
+                    <label class="form-label" for="cust-form-name">Full Name</label>
+                    <input type="text" id="cust-form-name" class="form-control" placeholder="Vikram Singh" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="cust-form-email">Email</label>
+                    <input type="email" id="cust-form-email" class="form-control" placeholder="vikram@gmail.com" required autocomplete="email">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="cust-form-phone">Phone</label>
+                        <input type="tel" id="cust-form-phone" class="form-control" placeholder="9876543209" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cust-form-gender">Gender</label>
+                        <select id="cust-form-gender" class="form-control" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="cust-form-pwd">Password</label>
+                    <input type="password" id="cust-form-pwd" class="form-control" placeholder="••••••••" required autocomplete="new-password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('modal-customer')">Cancel</button>
+                <button class="btn btn-primary" onclick="saveCustomer()">Save Customer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- B. Service Modal -->
+    <div class="modal-overlay" id="modal-service">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title" id="svc-modal-title">Add Service</h3>
+                <button class="modal-close" onclick="closeModal('modal-service')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="svc-form-id">
+                <div class="form-group">
+                    <label class="form-label" for="svc-form-name">Service Name</label>
+                    <input type="text" id="svc-form-name" class="form-control" placeholder="Body Massage" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="svc-form-category">Category</label>
+                        <select id="svc-form-category" class="form-control" required>
+                            <option value="Hair Cut">Hair Cut</option>
+                            <option value="Hair Styling">Hair Styling</option>
+                            <option value="Hair Coloring">Hair Coloring</option>
+                            <option value="Facial">Facial</option>
+                            <option value="Spa">Spa</option>
+                            <option value="Massage">Massage</option>
+                            <option value="Manicure">Manicure</option>
+                            <option value="Pedicure">Pedicure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="svc-form-duration">Duration (Minutes)</label>
+                        <input type="number" id="svc-form-duration" class="form-control" placeholder="60" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="svc-form-price">Price (₹)</label>
+                    <input type="number" id="svc-form-price" class="form-control" placeholder="1500" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="svc-form-desc">Description</label>
+                    <textarea id="svc-form-desc" class="form-control" rows="3" placeholder="Description of the service..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="svc-form-img">Image URL</label>
+                    <input type="url" id="svc-form-img" class="form-control" placeholder="https://images.unsplash.com/...">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('modal-service')">Cancel</button>
+                <button class="btn btn-primary" onclick="saveService()">Save Service</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- C. Stylist Modal -->
+    <div class="modal-overlay" id="modal-stylist">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title" id="sty-modal-title">Add Stylist</h3>
+                <button class="modal-close" onclick="closeModal('modal-stylist')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="sty-form-id">
+                <div class="form-group">
+                    <label class="form-label" for="sty-form-name">Stylist Name</label>
+                    <input type="text" id="sty-form-name" class="form-control" placeholder="Meera Nair" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="sty-form-spec">Specialization</label>
+                        <input type="text" id="sty-form-spec" class="form-control" placeholder="Hair Cut / Massage" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="sty-form-exp">Experience (Years)</label>
+                        <input type="number" id="sty-form-exp" class="form-control" placeholder="5" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="sty-form-phone">Phone Number</label>
+                        <input type="tel" id="sty-form-phone" class="form-control" placeholder="9988776650" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="sty-form-avail">Availability</label>
+                        <select id="sty-form-avail" class="form-control" required>
+                            <option value="Available">Available</option>
+                            <option value="Busy">Busy</option>
+                            <option value="Leave">Leave</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="sty-form-avatar">Avatar URL</label>
+                    <input type="url" id="sty-form-avatar" class="form-control" placeholder="https://images.unsplash.com/...">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('modal-stylist')">Cancel</button>
+                <button class="btn btn-primary" onclick="saveStylist()">Save Stylist</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- D. Appointment Modal -->
+    <div class="modal-overlay" id="modal-appointment">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title" id="apt-modal-title">Add Appointment</h3>
+                <button class="modal-close" onclick="closeModal('modal-appointment')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="apt-form-id">
+                <div class="form-group">
+                    <label class="form-label" for="apt-form-cust">Customer Name</label>
+                    <input type="text" id="apt-form-cust" class="form-control" placeholder="Rahul Sharma" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="apt-form-svc">Service Selected</label>
+                        <input type="text" id="apt-form-svc" class="form-control" placeholder="Hair Spa" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="apt-form-sty">Stylist Assigned</label>
+                        <input type="text" id="apt-form-sty" class="form-control" placeholder="Priya Sharma" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="apt-form-date">Date</label>
+                        <input type="date" id="apt-form-date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="apt-form-time">Time</label>
+                        <input type="text" id="apt-form-time" class="form-control" placeholder="11:30" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="apt-form-amount">Amount (₹)</label>
+                        <input type="number" id="apt-form-amount" class="form-control" placeholder="1200" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="apt-form-status">Status</label>
+                        <select id="apt-form-status" class="form-control" required>
+                            <option value="Booked">Booked</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('modal-appointment')">Cancel</button>
+                <button class="btn btn-primary" onclick="saveAppointment()">Save Appointment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- E. Payment Modal -->
+    <div class="modal-overlay" id="modal-payment">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Payment Transaction</h3>
+                <button class="modal-close" onclick="closeModal('modal-payment')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="pay-form-id">
+                <div class="form-group">
+                    <label class="form-label" for="pay-form-cust">Customer Name</label>
+                    <input type="text" id="pay-form-cust" class="form-control" required readonly>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="pay-form-apt">Appointment ID</label>
+                        <input type="number" id="pay-form-apt" class="form-control" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="pay-form-amount">Amount (₹)</label>
+                        <input type="number" id="pay-form-amount" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="pay-form-method">Payment Method</label>
+                        <select id="pay-form-method" class="form-control" required>
+                            <option value="UPI">UPI</option>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="Debit Card">Debit Card</option>
+                            <option value="Cash">Cash</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="pay-form-status">Payment Status</label>
+                        <select id="pay-form-status" class="form-control" required>
+                            <option value="Paid">Paid</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Failed">Failed</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="pay-form-date">Payment Date</label>
+                    <input type="date" id="pay-form-date" class="form-control" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('modal-payment')">Cancel</button>
+                <button class="btn btn-primary" onclick="savePayment()">Save Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Salon & Spa - Management Console. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

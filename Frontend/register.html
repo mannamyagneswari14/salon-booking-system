@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration - Luxe Salon & Spa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="register-page">
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">✦ Luxe <span>Salon & Spa</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links"></ul>
+            <div class="nav-actions" id="nav-actions"></div>
+        </div>
+    </nav>
+
+    <!-- Registration Form Section -->
+    <section class="section">
+        <div class="container">
+            <div class="form-container">
+                <h1 class="form-title">Join Luxe Club</h1>
+                <p class="form-subtitle">Create an account to track appointments & history</p>
+                
+                <form id="register-form">
+                    <div class="form-group">
+                        <label class="form-label" for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" class="form-control" placeholder="Rahul Sharma" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="reg-email">Email Address</label>
+                        <input type="email" id="reg-email" class="form-control" placeholder="rahul@gmail.com" required autocomplete="email">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="reg-phone">Phone Number</label>
+                            <input type="tel" id="reg-phone" class="form-control" placeholder="9876543210" required pattern="[0-9]{10}">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="reg-gender">Gender</label>
+                            <select id="reg-gender" class="form-control" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="reg-pwd">Password</label>
+                        <div class="pwd-wrapper">
+                            <input type="password" id="reg-pwd" class="form-control" placeholder="••••••••" required autocomplete="new-password">
+                            <button class="pwd-toggle" type="button" aria-label="Toggle Password Visibility">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="reg-pwd-confirm">Confirm Password</label>
+                        <div class="pwd-wrapper">
+                            <input type="password" id="reg-pwd-confirm" class="form-control" placeholder="••••••••" required autocomplete="new-password">
+                            <button class="pwd-toggle" type="button" aria-label="Toggle Password Visibility">👁️</button>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" id="btn-register-submit">Sign Up</button>
+                </form>
+                
+                <div class="form-footer">
+                    <p>Already have an account? <a href="login.html">Login Here</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top:none; padding-top:0;">
+                <p>&copy; 2026 Luxe Salon & Spa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

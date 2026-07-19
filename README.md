@@ -8,14 +8,14 @@ Developed using **HTML5**, **CSS3 (Vanilla)**, and **JavaScript (ES6)** on the f
 
 ## 📸 Visual Previews
 
-### 🏠 Luxury Home Page & Booking Entry
-![Luxe Home Page Preview](screenshots/homepage_preview.jpg)
+### 🏠 Salon Interior & Styling Sanctuary
+![Luxe Salon Interior](screenshots/salon_interior.jpg)
 
-### 📅 Interactive Time Slots Selection & Invoice Breakdown
-![Luxe Booking Page Preview](screenshots/booking_preview.jpg)
+### 💆‍♀️ Serene Spa Room & Massage Therapies
+![Luxe Spa Room](screenshots/spa_room.jpg)
 
-### 📊 Executive Administration Console & CRUD Control Panel
-![Luxe Admin Dashboard Preview](screenshots/admin_preview.jpg)
+### 💇 Master Hair Cutting & Styling Session
+![Luxe Hair Styling](screenshots/hair_styling.jpg)
 
 ---
 
@@ -73,10 +73,10 @@ SalonSpaBookingSystem/
  │    ├── 🎨 style.css           # Premium glassmorphic obsidian styling
  │    └── ⚡ script.js           # ES6 Fetch controllers and DOM handlers
  │
- ├── 📂 screenshots/             # Visual previews of the application
- │    ├── 🖼️ homepage_preview.jpg
- │    ├── 🖼️ booking_preview.jpg
- │    └── 🖼️ admin_preview.jpg
+ ├── 📂 screenshots/             # Realistic photographs of the salon
+ │    ├── 🖼️ salon_interior.jpg
+ │    ├── 🖼️ spa_room.jpg
+ │    └── 🖼️ hair_styling.jpg
  │
  ├── 🐍 manage.py                # Django settings config and launcher
  └── 📄 README.md                # Project documentation (This file)

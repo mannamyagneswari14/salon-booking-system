@@ -17,6 +17,15 @@ Developed using **HTML5**, **CSS3 (Vanilla)**, and **JavaScript (ES6)** on the f
 ### 💇 Master Hair Cutting & Styling Session
 ![Luxe Hair Styling](screenshots/hair_styling.jpg)
 
+### 🛢️ SQLite Database Schema & Tables
+![SQLite Database Tables](screenshots/database_screenshot.jpg)
+
+### 🧪 Postman API Testing (Endpoint Validation)
+![Postman API Testing](screenshots/postman_screenshot.jpg)
+
+### 🖥️ Frontend Web Application Portal
+![Luxe Web Application](screenshots/frontend_screenshot.jpg)
+
 ---
 
 ## 🌟 Implemented Features & Modules
@@ -73,10 +82,13 @@ SalonSpaBookingSystem/
  │    ├── 🎨 style.css           # Premium glassmorphic obsidian styling
  │    └── ⚡ script.js           # ES6 Fetch controllers and DOM handlers
  │
- ├── 📂 screenshots/             # Realistic photographs of the salon
+ ├── 📂 screenshots/             # Realistic photographs & evidence screenshots
  │    ├── 🖼️ salon_interior.jpg
  │    ├── 🖼️ spa_room.jpg
- │    └── 🖼️ hair_styling.jpg
+ │    ├── 🖼️ hair_styling.jpg
+ │    ├── 🖼️ database_screenshot.jpg
+ │    ├── 🖼️ postman_screenshot.jpg
+ │    └── 🖼️ frontend_screenshot.jpg
  │
  ├── 🐍 manage.py                # Django settings config and launcher
  └── 📄 README.md                # Project documentation (This file)
